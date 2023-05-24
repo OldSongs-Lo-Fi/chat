@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chat API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        h1 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        .toc {
+            margin-bottom: 20px;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            border-bottom: 1px dotted #ccc;
+            padding: 5px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1>Добро пожаловать на сервер!</h1>
+
+<div class="container">
+    <h2>Свод правил</h2>
+    <p>Этот сервер предназначен для работы форум чата. Имеет систему аутентификации. Использует базу данный MySQL.</p>
+
+    <p>Далее наведён простой пример использования сервера, с адресами и описанием каждого метода.</p>
+    <p>Список ссылок доступных неавторизованным пользователям:</p>
+    <ul>
+        <li><a href="#">/user/registration</a> - Регистрация нового пользователя. Принимает на вход JSON объект. Пример объекта:<code>
+            {
+            "nickname": "Dracula",
+            "login": "vlad",
+            "password": "1111"
+            }
+        </code></li>
+        <li><a href="/login">/login</a> - Авторизация на сервере. Происходит посредством приема post запроса с параметрами <code>username</code> (это поле <code>login</code> в user) и <code>password</code></li>
+        <li><a href="#">/index.html</a> - То, где вы находитесь на данный момент. Краткая инструкция для пользования сервером.</li>
+    </ul>
+
+    </code>
+    </li>
+</div>
+
+<div class="toc">
+    <h2>User (/user)</h2>
+    <ul>
+        <li><a href="#">/{id}</a> - Возвращает конкретного пользователя по id из @PathVariable</li>
+        <li><a href="#">/nicknames</a> - Возвращает список всех никнеймов пользователей.</li>
+        <li><a href="#">/all</a> - Возвращает список всех пользователей и их сообщений.</li>
+        <li><a href="#">/registration</a> - @PostMapping, регистрирует нового пользователя в системе. Принимает на вход JSON. Пример:<code>{
+            "nickname": "Dracula",
+            "login": "Vlad",
+            "password": "1111"
+            }
+        </code></li>
+        <li><a href="#">/update/{id}</a> - @PutMapping, обновляет данные пользователя. Принимает на вход JSON. Пример:<code>{
+            "nickname": "Updated",
+            "login": "Ivan",
+            "password": "2222"
+            }
+        </code></li>
+        <li><a href="#">/delete/{id}</a> - @DeleteMapping удаляет сообщение по id переданному с помощью @PathVariable</li>
+    </ul>
+</div>
+
+<div class="toc">
+    <h2>Message (/message)</h2>
+    <ul>
+        <li><a href="#">/all</a> - Выводит все сообщения.</li>
+        <li><a href="#">/{id}</a> - Выводит конкретное сообщение, по id из @PathVariable.</li>
+        <li><a href="#">/ofUser/{id}</a> - Выводит все сообщения пользователя, которого находит по id из @PathVariable.</li>
+        <li><a href="#">/create</a> - @PostMapping который принимает на вход JSON. Пример:
+            <code>
+                {
+                "text": "Hello Im first!",
+                "date": "2023 Aug 20:48",
+                "user_id": 2
+                }
+            </code></li>
+        <li><a href="#">/update</a> - @PutMapping принимает на вход 2 параметра:
+            <ol>
+                <li>String text - новый текст сообщения.</li>
+                <li>Long id - id сообщения которое вы хотите обновить.</li>
+            </ol>
+        </li>
+        <li><a href="#">/delete/{id}</a> - @DeleteMapping удаляет сообщение по id переданному с помощью @PathVariable</li>
+    </ul>
+</div>
+</body>
+</html>
