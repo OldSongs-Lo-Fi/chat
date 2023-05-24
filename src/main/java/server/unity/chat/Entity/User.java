@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 
 @Entity
-@Table("usr")
+@Table(name = "user_table")
 public class User {
 
     @Id
@@ -16,15 +16,15 @@ public class User {
     private Long id;
 
     @Column(nullable = false,
-    columnDefinition = "VARCHAR 30")
+            columnDefinition = "VARCHAR (30)")
     private String nickname;
     @Column(nullable = false,
             unique = true,
-            columnDefinition = "VARCHAR 30")
+            columnDefinition = "VARCHAR (40)")
     private String login;
 
     @Column(nullable = false,
-            columnDefinition = "VARCHAR 200")
+            columnDefinition = "VARCHAR (200)")
     private String password;
 
     @OneToMany(
@@ -35,12 +35,13 @@ public class User {
             orphanRemoval = true
     )
     @JsonIgnore
-    private List<Message> messages = new ArrayList<>();
+    private List<Message> messages;
 
     public User(String nickname, String login, String password) {
         this.nickname = nickname;
         this.login = login;
         this.password = password;
+        messages = new ArrayList<>();
     }
 
     public User() {
@@ -85,5 +86,4 @@ public class User {
     public void setMessages(List<Message> messages) {
         this.messages = messages;
     }
-
 }

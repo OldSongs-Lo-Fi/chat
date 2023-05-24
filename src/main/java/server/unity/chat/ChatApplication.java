@@ -13,9 +13,12 @@ public class ChatApplication {
 		SpringApplication.run(ChatApplication.class, args);
 		Thread thread = new Thread(() -> {
 			try {
+				int iterations = 0;
+				double timeStepMin = 0.5;
 				while (true){
-					Thread.sleep(10000); // Задержка в 10 секунд (10000 миллисекунд)
-					System.out.println("Dinara are the best!");
+					Thread.sleep(Math.round(timeStepMin * 60000)); // Задержка в 10 секунд (10000 миллисекунд)
+					iterations++;
+					System.out.println("The server has been running for " + (iterations*timeStepMin) + " minutes...");
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();

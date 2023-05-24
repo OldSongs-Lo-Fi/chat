@@ -7,28 +7,23 @@ import net.minidev.json.annotate.JsonIgnore;
 import java.util.Date;
 
 @Entity
+@Table(name = "message_table")
 public class Message {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(targetEntity = User.class,
-    cascade = CascadeType.ALL,
-    fetch = FetchType.LAZY)
-/*
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-*/
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
-/*    @Column(nullable = false,
-            columnDefinition = "TEXT")*/
+    @Column(nullable = false,
+            columnDefinition = "TEXT")
     private String text;
 
-
-/*    @Column(nullable = false,
-            updatable = false,
-            columnDefinition = "VARCHAR 20")*/
+    @Column(nullable = false,
+            columnDefinition = "VARCHAR (40)")
     private String date;
 
     public Message(User user, String text, String date) {
@@ -71,5 +66,4 @@ public class Message {
     public void setDate(String date) {
         this.date = date;
     }
-
 }
