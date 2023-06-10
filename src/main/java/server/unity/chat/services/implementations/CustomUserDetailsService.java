@@ -1,4 +1,4 @@
-package server.unity.chat.services;
+package server.unity.chat.services.implementations;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

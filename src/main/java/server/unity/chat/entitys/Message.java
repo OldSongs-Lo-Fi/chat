@@ -1,4 +1,4 @@
-package server.unity.chat.entity;
+package server.unity.chat.entitys;
 
 import jakarta.persistence.*;
 

@@ -7,15 +7,15 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import server.unity.chat.entitys.User;
 import server.unity.chat.repositories.UserRepository;
-import server.unity.chat.services.UserServiceBasic;
+import server.unity.chat.services.implementations.UserServiceBasicImpl;
 
 import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 
-public class UserServiceBasicTest {
+public class UserServiceBasicImplTest {
 
-    private UserServiceBasic userService;
+    private UserServiceBasicImpl userService;
 
     @Mock
     private UserRepository mockUserRepository;
@@ -24,7 +24,7 @@ public class UserServiceBasicTest {
     public void setup() {
         MockitoAnnotations.openMocks(this); // Инициализация моков
 
-        userService = new UserServiceBasic(mockUserRepository);
+        userService = new UserServiceBasicImpl(mockUserRepository);
     }
 
     @Test

@@ -1,7 +1,7 @@
-package server.unity.chat.ServiceInterface;
+package server.unity.chat.services.interfaces;
 
-import server.unity.chat.entity.Message;
-import server.unity.chat.entity.User;
+import server.unity.chat.entitys.Message;
+import server.unity.chat.entitys.User;
 
 import java.util.List;
 

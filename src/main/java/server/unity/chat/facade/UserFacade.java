@@ -1,6 +1,6 @@
-package server.unity.chat.Facade;
+package server.unity.chat.facade;
 
-import server.unity.chat.Entity.Message;
+import server.unity.chat.entitys.Message;
 
 import java.util.List;
 

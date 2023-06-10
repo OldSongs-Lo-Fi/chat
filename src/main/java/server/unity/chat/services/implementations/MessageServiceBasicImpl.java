@@ -1,4 +1,4 @@
-package server.unity.chat.services;
+package server.unity.chat.services.implementations;
 
 import org.springframework.stereotype.Service;
 import server.unity.chat.entitys.Message;
@@ -11,12 +11,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class MessageServiceBasic implements MessageService {
+public class MessageServiceBasicImpl implements MessageService {
 
     final
     MessageRepository messageRepository;
 
-    public MessageServiceBasic(MessageRepository messageRepository) {
+    public MessageServiceBasicImpl(MessageRepository messageRepository) {
         this.messageRepository = messageRepository;
     }
 

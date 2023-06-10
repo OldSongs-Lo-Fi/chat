@@ -1,4 +1,4 @@
-package server.unity.chat.Facade;
+package server.unity.chat.facade;
 
 public class MessageFacade {
     private String nickname;

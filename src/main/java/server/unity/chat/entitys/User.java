@@ -1,4 +1,4 @@
-package server.unity.chat.entity;
+package server.unity.chat.entitys;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

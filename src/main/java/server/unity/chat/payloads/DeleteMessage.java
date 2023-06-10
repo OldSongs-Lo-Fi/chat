@@ -1,4 +1,4 @@
-package server.unity.chat.Payload;
+package server.unity.chat.payloads;
 
 public class DeleteMessage {
 

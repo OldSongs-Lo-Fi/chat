@@ -1,12 +1,9 @@
 package server.unity.chat;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
-import server.unity.chat.Repositories.UserRepository;
-import server.unity.chat.ServiceInterface.UserService;
 
 @SpringBootApplication
 @EnableScheduling
