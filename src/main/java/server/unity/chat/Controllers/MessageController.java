@@ -9,7 +9,6 @@ import server.unity.chat.Payload.MessagePayload;
 import server.unity.chat.ServiceInterface.MessageService;
 import server.unity.chat.ServiceInterface.UserService;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,7 +60,7 @@ public class MessageController {
     public MessageFacade message(@RequestBody MessagePayload messagePayload){
         System.out.println("Start of creating message");
         Message message = new Message(
-                userService.getUserById(messagePayload.getUser_id()),
+                userService.getUserById(messagePayload.getUserId()),
                 messagePayload.getText(),
                 messagePayload.getDate());
         System.out.println("End of creating message. \n New message: " + message.getText());

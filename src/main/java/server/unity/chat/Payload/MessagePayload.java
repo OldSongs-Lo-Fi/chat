@@ -3,12 +3,12 @@ package server.unity.chat.Payload;
 public class MessagePayload {
     private String text;
     private String date;
-    private Long user_id;
+    private Long userId;
 
-    public MessagePayload(String text, String date, Long user_id) {
+    public MessagePayload(String text, String date, Long userId) {
         this.text = text;
         this.date = date;
-        this.user_id = user_id;
+        this.userId = userId;
     }
 
     public MessagePayload() {
@@ -22,8 +22,8 @@ public class MessagePayload {
         return date;
     }
 
-    public Long getUser_id() {
-        return user_id;
+    public Long getUserId() {
+        return userId;
     }
 
     public void setText(String text) {
@@ -34,7 +34,7 @@ public class MessagePayload {
         this.date = date;
     }
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }
