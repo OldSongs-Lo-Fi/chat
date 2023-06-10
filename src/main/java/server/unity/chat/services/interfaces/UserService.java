@@ -1,13 +1,8 @@
 package server.unity.chat.ServiceInterface;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import server.unity.chat.Entity.Message;
-import server.unity.chat.Entity.User;
-import server.unity.chat.Repositories.UserRepository;
+import server.unity.chat.entity.Message;
+import server.unity.chat.entity.User;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 

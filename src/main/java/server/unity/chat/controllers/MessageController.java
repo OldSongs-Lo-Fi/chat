@@ -1,9 +1,9 @@
-package server.unity.chat.Controllers;
+package server.unity.chat.controller;
 
 import org.springframework.web.bind.annotation.*;
-import server.unity.chat.Entity.Message;
-import server.unity.chat.Entity.User;
-import server.unity.chat.Facade.MessageFacade;
+import server.unity.chat.entity.Message;
+import server.unity.chat.entity.User;
+import server.unity.chat.facade.MessageFacade;
 import server.unity.chat.Payload.DeleteMessage;
 import server.unity.chat.Payload.MessagePayload;
 import server.unity.chat.ServiceInterface.MessageService;

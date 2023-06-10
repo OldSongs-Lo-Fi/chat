@@ -1,16 +1,14 @@
-package server.unity.chat.Controllers;
+package server.unity.chat.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import server.unity.chat.Entity.User;
-import server.unity.chat.Facade.UserFacade;
+import server.unity.chat.entity.User;
+import server.unity.chat.facade.UserFacade;
 import server.unity.chat.Payload.DeleteMessage;
 import server.unity.chat.Payload.UserPayload;
 import server.unity.chat.ServiceInterface.UserService;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 

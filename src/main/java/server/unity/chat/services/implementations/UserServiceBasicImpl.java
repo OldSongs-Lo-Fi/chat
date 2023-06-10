@@ -1,11 +1,10 @@
-package server.unity.chat.Service;
+package server.unity.chat.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import server.unity.chat.Entity.Message;
-import server.unity.chat.Entity.User;
-import server.unity.chat.Repositories.UserRepository;
-import server.unity.chat.ServiceInterface.UserService;
+import server.unity.chat.entitys.Message;
+import server.unity.chat.entitys.User;
+import server.unity.chat.repositories.UserRepository;
+import server.unity.chat.services.interfaces.UserService;
 
 import java.util.Comparator;
 import java.util.List;

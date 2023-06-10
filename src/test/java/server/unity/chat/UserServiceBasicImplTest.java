@@ -5,9 +5,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import server.unity.chat.Entity.User;
-import server.unity.chat.Repositories.UserRepository;
-import server.unity.chat.Service.UserServiceBasic;
+import server.unity.chat.entitys.User;
+import server.unity.chat.repositories.UserRepository;
+import server.unity.chat.services.UserServiceBasic;
 
 import java.util.Optional;
 

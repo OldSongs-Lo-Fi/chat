@@ -1,9 +1,8 @@
 package server.unity.chat.ServiceInterface;
 
-import server.unity.chat.Entity.Message;
-import server.unity.chat.Entity.User;
+import server.unity.chat.entity.Message;
+import server.unity.chat.entity.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface MessageService {

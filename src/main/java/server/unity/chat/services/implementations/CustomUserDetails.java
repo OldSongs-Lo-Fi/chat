@@ -1,8 +1,8 @@
-package server.unity.chat.Service;
+package server.unity.chat.services;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import server.unity.chat.Entity.User;
+import server.unity.chat.entitys.User;
 
 import java.util.Collection;
 

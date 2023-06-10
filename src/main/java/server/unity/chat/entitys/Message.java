@@ -1,10 +1,6 @@
-package server.unity.chat.Entity;
+package server.unity.chat.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import net.minidev.json.annotate.JsonIgnore;
-
-import java.util.Date;
 
 @Entity
 @Table(name = "message_table")

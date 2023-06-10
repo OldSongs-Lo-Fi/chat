@@ -1,12 +1,11 @@
-package server.unity.chat.Service;
+package server.unity.chat.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import server.unity.chat.Entity.User;
-import server.unity.chat.Repositories.UserRepository;
+import server.unity.chat.entitys.User;
+import server.unity.chat.repositories.UserRepository;
 
 import java.util.Optional;
 
