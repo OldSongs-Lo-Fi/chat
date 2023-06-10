@@ -21,22 +21,19 @@ public class UserServiceBasicImpl implements UserService {
         this.userRepository = userRepository;
     }
 
-    @Override
-    public User getUserById(Long id) {
-        Optional<User> user = userRepository.findUserById(id);
-        return user.orElse(null);
+    @Override public User getUserById(Long id) {
+        return userRepository.findUserById(id).orElse(null);
     }
+
 
     @Override
     public User getUserByName(String name) {
-        Optional<User> user = userRepository.findUserByNickname(name);
-        return user.orElse(null);
+        return userRepository.findUserByNickname(name).orElse(null);
     }
 
     @Override
     public User getUserByMessage(Message message) {
-        Optional<User> user = userRepository.findUserByMessagesContaining(message);
-        return user.orElse(null);
+        return userRepository.findUserByMessagesContaining(message).orElse(null);
     }
 
     @Override
