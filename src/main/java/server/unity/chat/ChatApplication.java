@@ -3,29 +3,27 @@ package server.unity.chat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import server.unity.chat.Repositories.UserRepository;
 import server.unity.chat.ServiceInterface.UserService;
 
 @SpringBootApplication
+@EnableScheduling
 public class ChatApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ChatApplication.class, args);
-		Thread thread = new Thread(() -> {
-			try {
-				int iterations = 0;
-				double timeStepMin = 0.5;
-				while (true){
-					Thread.sleep(Math.round(timeStepMin * 60000)); // Задержка в 10 секунд (10000 миллисекунд)
-					iterations++;
-					System.out.println("The server has been running for " + (iterations*timeStepMin) + " minutes...");
-				}
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		});
+		printServerRunningTime();
+	}
 
-		thread.start();
+	private static int iterations = 0;
+	private final static double timeStepMin = 0.5;
+
+	@Scheduled(fixedDelay = 30000) // Задержка в 30 секунд (30000 миллисекунд)
+	static public void printServerRunningTime() {
+		System.out.println("The server has been running for " + (iterations * timeStepMin) + " minutes...");
+		iterations++;
 	}
 
 }
