@@ -22,11 +22,27 @@ public class Message {
             columnDefinition = "VARCHAR (40)")
     private String date;
 
-    public Message(User user, String text, String date) {
+    @Lob
+    @Column(columnDefinition = "BLOB")
+    protected String sound;
+
+    @Lob
+    @Column(columnDefinition = "BLOB")
+    protected String image;
+
+    public Message(User user, String text, String date, String sound, String image) {
         this.user = user;
         this.text = text;
         this.date = date;
+        this.sound = sound;
+        this.image = image;
     }
+
+    /*    public Message(User user, String text, String date) {
+        this.user = user;
+        this.text = text;
+        this.date = date;
+    }*/
 
     public Message() {
     }
@@ -61,5 +77,21 @@ public class Message {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getSound() {
+        return sound;
+    }
+
+    public void setSound(String sound) {
+        this.sound = sound;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

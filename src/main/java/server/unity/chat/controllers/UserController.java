@@ -3,7 +3,7 @@ package server.unity.chat.controllers;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import server.unity.chat.entitys.User;
-import server.unity.chat.facade.UserFacade;
+import server.unity.chat.facades.UserFacade;
 import server.unity.chat.payloads.DeleteMessage;
 import server.unity.chat.payloads.UserPayload;
 import server.unity.chat.services.interfaces.UserService;

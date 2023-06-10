@@ -1,27 +1,28 @@
-package server.unity.chat.payloads;
+package server.unity.chat.facades;
 
-public class MessagePayload {
+public class MessageFacade {
+    private String nickname;
     private String text;
     private String date;
-    private Long userId;
     private String sound;
     private String image;
 
-    public MessagePayload(String text, String date, Long userId, String sound, String image) {
+    public MessageFacade(String nickname, String text, String date, String sound, String image) {
+        this.nickname = nickname;
         this.text = text;
         this.date = date;
-        this.userId = userId;
         this.sound = sound;
         this.image = image;
     }
 
-    /*    public MessagePayload(String text, String date, Long userId) {
+    /*    public MessageFacade(String nickname, String text, String date) {
+        this.nickname = nickname;
         this.text = text;
         this.date = date;
-        this.userId = userId;
     }*/
 
-    public MessagePayload() {
+    public String getNickname() {
+        return nickname;
     }
 
     public String getText() {
@@ -32,8 +33,8 @@ public class MessagePayload {
         return date;
     }
 
-    public Long getUserId() {
-        return userId;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public void setText(String text) {
@@ -42,10 +43,6 @@ public class MessagePayload {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
     }
 
     public String getSound() {

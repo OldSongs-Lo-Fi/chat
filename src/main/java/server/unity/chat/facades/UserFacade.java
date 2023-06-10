@@ -1,4 +1,4 @@
-package server.unity.chat.facade;
+package server.unity.chat.facades;
 
 import server.unity.chat.entitys.Message;
 

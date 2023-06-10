@@ -14,6 +14,6 @@ public interface MessageService {
     public Message updateMessage(Message message);
     public boolean deleteMessage(Message message);
     public boolean deleteMessageById(Long id);
-    public Message createMessage(User user, String text, String date);
+    public Message createMessage(User user, String text, String date, String sound, String image);
     public Message createMessage(Message message);
 }

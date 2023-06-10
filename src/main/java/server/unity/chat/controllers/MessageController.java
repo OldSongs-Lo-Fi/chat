@@ -3,7 +3,7 @@ package server.unity.chat.controllers;
 import org.springframework.web.bind.annotation.*;
 import server.unity.chat.entitys.Message;
 import server.unity.chat.entitys.User;
-import server.unity.chat.facade.MessageFacade;
+import server.unity.chat.facades.MessageFacade;
 import server.unity.chat.payloads.DeleteMessage;
 import server.unity.chat.payloads.MessagePayload;
 import server.unity.chat.services.interfaces.MessageService;
@@ -31,7 +31,11 @@ public class MessageController {
         List<MessageFacade> messageFacades = new ArrayList<>();
         for (Message message:
                 messages) {
-            messageFacades.add(new MessageFacade(message.getUser().getNickname(), message.getText(), message.getDate()));
+            messageFacades.add(new MessageFacade(message.getUser().getNickname(),
+                    message.getText(),
+                    message.getDate(),
+                    message.getSound(),
+                    message.getImage()));
         }
         return messageFacades;
     }
@@ -39,7 +43,11 @@ public class MessageController {
     @GetMapping("/{id}")
     public MessageFacade getMessageById(@PathVariable("id") Long id){
         Message message = messageService.getMessageById(id);
-        return new MessageFacade(message.getUser().getNickname(), message.getText(), message.getDate());
+        return new MessageFacade(message.getUser().getNickname(),
+                message.getText(),
+                message.getDate(),
+                message.getSound(),
+                message.getImage());
     }
 
     @GetMapping("/ofUser/{id}")
@@ -49,7 +57,11 @@ public class MessageController {
         List<MessageFacade> messageFacades = new ArrayList<>();
         for (Message message:
              messages) {
-            messageFacades.add(new MessageFacade(user.getNickname(), message.getText(), message.getDate()));
+            messageFacades.add(new MessageFacade(user.getNickname(),
+                    message.getText(),
+                    message.getDate(),
+                    message.getSound(),
+                    message.getImage()));
         }
         return messageFacades;
     }
@@ -62,10 +74,16 @@ public class MessageController {
         Message message = new Message(
                 userService.getUserById(messagePayload.getUserId()),
                 messagePayload.getText(),
-                messagePayload.getDate());
+                messagePayload.getDate(),
+                messagePayload.getSound(),
+                messagePayload.getImage());
         System.out.println("End of creating message. \n New message: " + message.getText());
         Message created = messageService.createMessage(message);
-        return new MessageFacade(created.getUser().getNickname(), created.getText(), created.getDate());
+        return new MessageFacade(created.getUser().getNickname(),
+                created.getText(),
+                created.getDate(),
+                created.getSound(),
+                created.getImage());
     }
 
     @PutMapping("/update")
@@ -74,7 +92,12 @@ public class MessageController {
         Message message = messageService.getMessageById(id);
         message.setText(text);
         Message updated = messageService.updateMessage(message);
-        return new MessageFacade(updated.getUser().getNickname(), updated.getText(), updated.getDate());
+        return new MessageFacade(updated.getUser().getNickname(),
+                updated.getText(),
+                updated.getDate(),
+                updated.getSound(),
+                updated.getImage()
+                );
     }
 
     @DeleteMapping("/delete/{id}")
