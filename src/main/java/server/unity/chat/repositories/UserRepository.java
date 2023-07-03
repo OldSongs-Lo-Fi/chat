@@ -15,6 +15,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findUserByLogin(String login);
     Optional<User> findUserByMessagesContaining(Message message);
     List<User> findAllByOrderByNicknameAsc();
+    //TODO DROP DATABASE --
     @Query("SELECT u.nickname FROM User u")
     Set<String> findAllNicknames();
 }

@@ -48,14 +48,6 @@ public class UserServiceBasicImpl implements UserService {
 
     @Override
     public List<User> getUsersSortedByName() {
-/*        List<User> users = getUsers();
-        users.sort(new Comparator<User>() {
-            @Override
-            public int compare(User o1, User o2) {
-                return o1.getNickname().compareTo(o2.getNickname());
-            }
-        });
-        return users;*/
         return userRepository.findAllByOrderByNicknameAsc();
     }
 

@@ -14,8 +14,12 @@ public class ChatApplication {
 		printServerRunningTime();
 	}
 
+
+
+
 	private static int iterations = 0;
 	private final static double timeStepMin = 0.5;
+
 
 	@Scheduled(fixedDelay = 30000) // Задержка в 30 секунд (30000 миллисекунд)
 	static public void printServerRunningTime() {
