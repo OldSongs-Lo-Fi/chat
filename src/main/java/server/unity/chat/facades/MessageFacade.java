@@ -1,18 +1,22 @@
 package server.unity.chat.facades;
 
+import java.util.List;
+
 public class MessageFacade {
     private String nickname;
     private String text;
     private String date;
-    private String sound;
-    private String image;
+    private List<String> sound;
+    private List<String> image;
+    private List<String> files;
 
-    public MessageFacade(String nickname, String text, String date, String sound, String image) {
+    public MessageFacade(String nickname, String text, String date, List<String> sound, List<String> image, List<String> files) {
         this.nickname = nickname;
         this.text = text;
         this.date = date;
         this.sound = sound;
         this.image = image;
+        this.files = files;
     }
 
     /*    public MessageFacade(String nickname, String text, String date) {
@@ -45,19 +49,27 @@ public class MessageFacade {
         this.date = date;
     }
 
-    public String getSound() {
+    public List<String> getSound() {
         return sound;
     }
 
-    public void setSound(String sound) {
+    public void setSound(List<String> sound) {
         this.sound = sound;
     }
 
-    public String getImage() {
+    public List<String> getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(List<String> image) {
         this.image = image;
+    }
+
+    public List<String> getFiles() {
+        return files;
+    }
+
+    public void setFiles(List<String> files) {
+        this.files = files;
     }
 }

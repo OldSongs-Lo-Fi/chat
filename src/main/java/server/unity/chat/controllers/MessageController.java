@@ -35,7 +35,8 @@ public class MessageController {
                     message.getText(),
                     message.getDate(),
                     message.getSound(),
-                    message.getImage()));
+                    message.getImage(),
+                    message.getFiles()));
         }
         return messageFacades;
     }
@@ -47,7 +48,8 @@ public class MessageController {
                 message.getText(),
                 message.getDate(),
                 message.getSound(),
-                message.getImage());
+                message.getImage(),
+                message.getFiles());
     }
 
     @GetMapping("/ofUser/{id}")
@@ -61,7 +63,8 @@ public class MessageController {
                     message.getText(),
                     message.getDate(),
                     message.getSound(),
-                    message.getImage()));
+                    message.getImage(),
+                    message.getFiles()));
         }
         return messageFacades;
     }
@@ -76,14 +79,16 @@ public class MessageController {
                 messagePayload.getText(),
                 messagePayload.getDate(),
                 messagePayload.getSound(),
-                messagePayload.getImage());
+                messagePayload.getImage(),
+                messagePayload.getFiles());
         System.out.println("End of creating message. \n New message: " + message.getText());
         Message created = messageService.createMessage(message);
         return new MessageFacade(created.getUser().getNickname(),
                 created.getText(),
                 created.getDate(),
                 created.getSound(),
-                created.getImage());
+                created.getImage(),
+                created.getFiles());
     }
 
     @PutMapping("/update")
@@ -96,7 +101,8 @@ public class MessageController {
                 updated.getText(),
                 updated.getDate(),
                 updated.getSound(),
-                updated.getImage()
+                updated.getImage(),
+                updated.getFiles()
                 );
     }
 

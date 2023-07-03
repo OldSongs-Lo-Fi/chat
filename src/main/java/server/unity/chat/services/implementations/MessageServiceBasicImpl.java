@@ -85,8 +85,8 @@ public class MessageServiceBasicImpl implements MessageService {
     }
 
     @Override
-    public Message createMessage(User user, String text, String date, String sound, String image) {
-        Message message = new Message(user, text, date, sound, image);
+    public Message createMessage(User user, String text, String date, List<String> sound, List<String> image, List<String> files) {
+        Message message = new Message(user, text, date, sound, image, files);
         return messageRepository.save(message);
     }
 
